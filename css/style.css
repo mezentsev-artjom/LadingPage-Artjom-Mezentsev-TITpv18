@@ -1,7 +1,7 @@
 :root {
-    --dark-color: rgb(30, 75, 221);
-    --Medium-color: rgb(6, 152, 250);
-    --Ligth-Color: rgb(0, 234, 255);
+    --dark-color: rgba(50, 47, 226, 0.815);
+    --medium-color: rgba(0, 153, 255, 0.2);
+    --light-color: rgb(134, 201, 240);
 }
 
 * {
@@ -21,9 +21,114 @@ body {
 
 .header {
     height: 95vh;
-    background-image:url('../img/Gora.jpg');
-    background-size: contain;
+    background-image:linear-gradient(to bottom right, var(--light-color), var(--medium-color)), url('../img/pexels-andrew-neel-5202027.jpg');
+    background-size: cover;
     background-position: top;
-    clip-path: polygon(20% 0%, 0% 20%, 14% 50%, 0% 80%, 20% 100%, 59% 100%, 100% 100%, 100% 80%, 100% 50%, 100% 20%, 80% 0%, 50% 15%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 
+}
+
+.logo-box {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+
+}
+
+.logo {
+    height: 1.7rem;
+}
+
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 2.2rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translatex(-100px)
+    }
+
+    80% {
+        transform: translateX(20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+.heading-primary-sub {
+    display: block;
+    font-size: 1.5rem;
+    letter-spacing: 1.4rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+}
+
+@keyframes moveInRight{
+    0% {
+        opacity: 0;
+        transform: translatex(100px)
+    }
+
+    80% {
+        transform: translateX(20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+.btn-div {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: ;
+    margin: 1rem;
+    padding: 1rem;
+    opacity: 0;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+
+    transition-property: transform;
+    -moz-transition-duration: 3s;
+}
+
+.btn:hover {
+    transform: rotateY(50deg);
+}
+
+@keyframes btn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
